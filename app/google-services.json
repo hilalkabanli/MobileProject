@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "330776704407",
+    "firebase_url": "https://mobile-project-17a09-default-rtdb.firebaseio.com",
+    "project_id": "mobile-project-17a09",
+    "storage_bucket": "mobile-project-17a09.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:330776704407:android:a9c3d9c5ecd1fb76f7c0d2",
+        "android_client_info": {
+          "package_name": "com.example.ceyda.friendlypaws"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1G711-yr-JJnLQP50PCqO-I8x_CWu96g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
