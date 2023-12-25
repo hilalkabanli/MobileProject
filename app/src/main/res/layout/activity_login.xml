@@ -39,6 +39,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
         android:ems="10"
+        android:hint="Enter Your Email"
         android:inputType="textEmailAddress"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
@@ -50,6 +51,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
         android:ems="10"
+        android:hint="Enter Your Password"
         android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextEmailAddress2" />
