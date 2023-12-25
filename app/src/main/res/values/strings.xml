@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">FriendlyPaws</string>
+    <string name="google_map_key">AIzaSyCCEinvhjHLeZFi-PrbSeBwP-To89jTPXo</string>
 </resources>
