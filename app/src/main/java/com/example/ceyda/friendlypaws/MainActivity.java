@@ -3,6 +3,7 @@ package com.example.ceyda.friendlypaws;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.AsyncTask;
@@ -64,6 +65,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        findViewById(R.id.bt_chatbot).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, PawChatBot.class);
+                startActivity(intent);
+            }
+        });
+
         TextView txtView = findViewById(R.id.textView7);
 
         fetchUserInformation(txtView);
@@ -85,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
         btFind.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 int i = spType.getSelectedItemPosition();
                 String url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json" +
                         "?location=" + currentLat + "," + currentLong +

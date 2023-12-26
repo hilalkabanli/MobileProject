@@ -61,4 +61,6 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore")
     // When using the BoM, don't specify versions in Firebase dependencies
     // https://firebase.google.com/docs/android/setup#available-libraries
+
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
 }
