@@ -4,7 +4,7 @@ import android.net.Uri;
 import android.provider.BaseColumns;
 
 public class Contract {
-    public static final String AUTHORITY = "com.example.friendlypaws.provider";
+    public static final String AUTHORITY = "com.example.rumeysa.friendlypaws.provider";
     public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + AUTHORITY);
 
     // The URI for the "lostanimals" table
