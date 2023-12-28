@@ -46,6 +46,10 @@ public class SignupActivity extends AppCompatActivity {
         fdb = FirebaseDatabase.getInstance();
         db = FirebaseFirestore.getInstance();
 
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        String loggedInUserId = currentUser != null ? currentUser.getUid() : ""; // Oturum açmış kullanıcının UID'sini al
+
+
         // Reference the button using findViewById
         Button signupBtn = findViewById(R.id.button3);
 

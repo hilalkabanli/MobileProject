@@ -17,6 +17,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,8 +47,14 @@ public class ForumActivity extends AppCompatActivity implements ForumManager.Mes
 
         messageList = new ArrayList<>();
 
-        messageAdapter2 = new MessageAdapter2(messageList);
-        recyclerView.setAdapter(messageAdapter2);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            String loggedInUserId = user.getUid();
+
+            // MessageAdapter2'yi oluştururken loggedInUserId kullan
+            messageAdapter2 = new MessageAdapter2(messageList, loggedInUserId);
+            recyclerView.setAdapter(messageAdapter2);
+        }
 
 
         forumManager.listenForMessages(this);
@@ -63,9 +72,11 @@ public class ForumActivity extends AppCompatActivity implements ForumManager.Mes
 
     @Override
     public void onMessageAdded(ForumMessage message) {
-        messageList.add(message);
-        messageAdapter2.setMessageList(messageList);
-        messageAdapter2.notifyDataSetChanged();
-        recyclerView.smoothScrollToPosition(messageAdapter2.getItemCount());
+            messageList.add(message); // Yeni mesajı listeye ekle
+            messageAdapter2.setMessageList(messageList); // Adapter'a güncellenmiş listeyi ayarla
+            messageAdapter2.notifyDataSetChanged(); // Adapter'a değişikliği bildir
+            recyclerView.smoothScrollToPosition(messageAdapter2.getItemCount() - 1); // En alttaki mesajı görüntüle
+
+
     }
 }
