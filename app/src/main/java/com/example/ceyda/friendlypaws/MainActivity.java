@@ -65,13 +65,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        findViewById(R.id.bt_chatbot).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, PawChatBot.class);
-                startActivity(intent);
-            }
-        });
 
         spType = findViewById(R.id.sp_type);
         btFind = findViewById(R.id.bt_find);

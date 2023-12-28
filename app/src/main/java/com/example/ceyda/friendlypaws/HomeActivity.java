@@ -36,6 +36,14 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        findViewById(R.id.bt_chatbot).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, PawChatBot.class);
+                startActivity(intent);
+            }
+        });
+
         TextView txtView = findViewById(R.id.textView7);
 
         // Fetch user information and update the TextView in the callback
