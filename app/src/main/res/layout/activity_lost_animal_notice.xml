@@ -1,9 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativelayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LostAnimalNoticeActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/imageViewPet2"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/r_fluff_puppy" />
+
+    <Button
+        android:id="@+id/buttonChoosePhoto2"
+        android:layout_width="165dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/imageViewPet2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Choose Photo" />
+
+    <EditText
+        android:id="@+id/editTextAddress2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/buttonChoosePhoto2"
+        android:layout_marginTop="20dp"
+        android:hint="Enter Address" />
+
+    <EditText
+        android:id="@+id/editTextInfo2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/editTextAddress2"
+        android:layout_marginTop="20dp"
+        android:hint="Additional Information" />
+
+    <Button
+        android:id="@+id/button72"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/editTextInfo2"
+        android:layout_marginTop="20dp"
+        android:text="Post" />
+
+</RelativeLayout>
