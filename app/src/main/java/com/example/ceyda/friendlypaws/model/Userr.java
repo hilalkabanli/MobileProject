@@ -9,26 +9,28 @@ public class Userr {
     private String userId;
     private String email;
     private String username;
-    // Add other fields as needed
     private String badge;
     private int point;
+    private String phone;
 
-    // Default constructor required for DataSnapshot.getValue(Userr.class)
-    // Required default constructor for Firebase Realtime Database
+
+    // Default constructor required for DataSnapshot.getValue(Userr.class)   // Required default constructor for Firebase Realtime Database
     public Userr() {
+
     }
 
     public Userr(String userId, String email, String username) {
         this.userId = userId;
         this.email = email;
         this.username = username;
-        // Initialize other fields as needed
+
         this.point = 0;
         this.badge = "rookie";
+
+        this.phone = "";
     }
 
-    // Add getters and setters for other fields
-
+    // getters and setters for other fields
     public String getUserId() {
         return userId;
     }
@@ -48,4 +50,6 @@ public class Userr {
     public int getPoint() {
         return point;
     }
+
+    public String getPhone() {return phone; }
 }
