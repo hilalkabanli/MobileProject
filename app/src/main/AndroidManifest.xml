@@ -17,6 +17,15 @@
         android:theme="@style/Theme.FriendlyPaws"
         tools:targetApi="31">
         <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LostAnimalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashActivity"
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar">
@@ -42,7 +51,7 @@
             android:exported="false" />
         <activity
             android:name=".SignupLoginActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />

@@ -33,24 +33,12 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         />
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="170dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="15dp"
-        android:text="  "
-        android:textAlignment="textEnd"
-        android:textColor="#832693"
-        android:textSize="16sp"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/bt_chatbot"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Paw ChatBot" />
+
 
 </LinearLayout>
