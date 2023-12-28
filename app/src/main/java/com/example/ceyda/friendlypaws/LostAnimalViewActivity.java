@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.ContentUris;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -44,6 +46,8 @@ public class LostAnimalViewActivity extends AppCompatActivity {
         String animal_id = getIntent().getStringExtra("id");
 
         getOtherInfo(animal_id);
+
+        //Transaction too large!!!
 
         // Set values to TextViews
         //idTextView.setText("ID: " + id);
@@ -126,20 +130,33 @@ public class LostAnimalViewActivity extends AppCompatActivity {
             int infoColumnIndex = cursor.getColumnIndex(Contract.MyEntry.COLUMN_INFO);
             int phoneColumnIndex = cursor.getColumnIndex(Contract.MyEntry.COLUMN_PHONE);
             int useridColumnIndex = cursor.getColumnIndex(Contract.MyEntry.COLUMN_USER_ID);
+            int pictureColumnIndex = cursor.getColumnIndex(Contract.MyEntry.COLUMN_PICTURE);
 
             // Check if the columns are found
-            if (addressColumnIndex >= 0 && infoColumnIndex >= 0 && phoneColumnIndex >= 0 && useridColumnIndex >= 0 ) {
+            if (addressColumnIndex >= 0 && infoColumnIndex >= 0 && phoneColumnIndex >= 0 && useridColumnIndex >= 0 && pictureColumnIndex >= 0) {
                 // Column found, get the value
                 String address2 = cursor.getString(addressColumnIndex);
                 String info2 = cursor.getString(infoColumnIndex);
                 String phone2 = cursor.getString(phoneColumnIndex);
                 String userid2 = cursor.getString(useridColumnIndex);
+                byte[] pictureBytes = cursor.getBlob(pictureColumnIndex);
 
                 // Use the 'address' variable as needed
                 address = address2;
                 info = info2;
                 phone = phone2;
                 userid = userid2;
+
+                // Convert the byte array to a Bitmap
+                if (pictureBytes != null && pictureBytes.length > 0) {
+                    Bitmap bitmap = BitmapFactory.decodeByteArray(pictureBytes, 0, pictureBytes.length);
+                    // Now 'bitmap' contains the image, you can set it to an ImageView or use it as needed
+                    img_view.setImageBitmap(bitmap);
+                } else {
+                    // Handle the case where the image is not found
+                    Log.e("YourTag", "Image not found");
+                    //....
+                }
 
             } else {
                 // Handle the case where the column is not found

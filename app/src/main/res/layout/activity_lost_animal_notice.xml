@@ -42,7 +42,7 @@
         android:hint="Additional Information" />
 
     <Button
-        android:id="@+id/button72"
+        android:id="@+id/postBtn"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
