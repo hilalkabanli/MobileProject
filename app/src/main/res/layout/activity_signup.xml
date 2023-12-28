@@ -11,14 +11,14 @@
         android:layout_width="295dp"
         android:layout_height="50dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="152dp"
+        android:layout_marginTop="30dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Enter Your Name"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -67,7 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="158dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="65dp"
         android:layout_marginEnd="158dp"
         android:text="Welcome"
         android:textColor="#50155A"
@@ -81,7 +81,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="40dp"
         android:text="Sign up for the Friendly Paws."
         android:textColor="#822691"
         android:textSize="16sp"

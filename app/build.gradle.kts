@@ -46,6 +46,7 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
+
     implementation("com.google.firebase:firebase-database:20.0.4")
     //implementation 'com.google.firebase:firebase-database:22.0.0' // Use the latest version
     implementation("com.google.firebase:firebase-auth:22.0.0") // Use the latest version
@@ -64,4 +65,13 @@ dependencies {
     // https://firebase.google.com/docs/android/setup#available-libraries
 
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
+
+    //for Splash Activity
+    implementation ("com.github.bumptech.glide:glide:4.12.0")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
+
+    //for Profile Activity and Start Logo
+    implementation ("androidx.cardview:cardview:1.0.0")
+
+    
 }

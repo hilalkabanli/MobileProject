@@ -60,7 +60,6 @@ public class LoginActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     // Sign in success
-                                    //***   //fetchUserInformation();
                                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                     startActivity(intent);
                                     finish();
@@ -90,13 +89,7 @@ public class LoginActivity extends AppCompatActivity {
                         // Now 'user' contains the information you stored in the database
 
                         // Perform login actions here (e.g., set user session, navigate to the home screen)
-                        // You can customize this part based on your app's login flow
-
-                        // Example: Setting user information in a session manager
-                        //???  //SessionManager sessionManager = new SessionManager(getApplicationContext());
-                        //sessionManager.createLoginSession(user.getUserId(), user.getEmail());
-
-                        // Example: Navigate to the home screen
+                        // Navigate to the home screen
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         startActivity(intent);
                         finish();
