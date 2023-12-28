@@ -62,8 +62,10 @@ public class LostAnimalNoticeActivity extends AppCompatActivity {
             }
         });
 
-        Button postbtn = findViewById(R.id.button72);
-        gestureDetector = new GestureDetector(this, new GestureListener(postbtn));
+        Button postbtn = findViewById(R.id.postBtn);
+        //gestureDetector = new GestureDetector(this, new GestureListener(postbtn));
+
+        gestureDetector = new GestureDetector(this, new GestureListener(this));
 
         // Set an onTouchListener for the button
         postbtn.setOnTouchListener((v, event) -> {
