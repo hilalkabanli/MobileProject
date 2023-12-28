@@ -3,6 +3,7 @@ package com.example.ceyda.friendlypaws;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -125,6 +126,11 @@ public class SignupActivity extends AppCompatActivity {
                                             }
                                         });
                             }
+                            Intent intent = new Intent(SignupActivity.this, MainActivity.class);
+                            startActivity(intent);
+                            finish();
+                            Toast.makeText(SignupActivity.this, "Successfull Registery", Toast.LENGTH_SHORT).show();
+
                         } else {
                             // If sign up fails, display a message to the user.
                             Toast.makeText(SignupActivity.this, "Registration Failed.",

@@ -13,6 +13,7 @@ public class SignupLoginActivity extends AppCompatActivity {
 
     private Button btnLogin;
     private Button btnSignup;
+    private Button jumpBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,13 +25,14 @@ public class SignupLoginActivity extends AppCompatActivity {
 
         btnLogin = findViewById(R.id.button);
         btnSignup = findViewById(R.id.button2);
+        jumpBtn = findViewById(R.id.jumpBtn);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SignupLoginActivity.this, LoginActivity.class);
                 startActivity(intent);
-                finish();
+                //finish();
             }
         });
 
@@ -38,6 +40,15 @@ public class SignupLoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SignupLoginActivity.this, SignupActivity.class);
+                startActivity(intent);
+                //finish();
+            }
+        });
+
+        jumpBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SignupLoginActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }
