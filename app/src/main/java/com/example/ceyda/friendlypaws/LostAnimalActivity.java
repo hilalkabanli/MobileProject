@@ -98,4 +98,13 @@ public class LostAnimalActivity extends AppCompatActivity {
             }
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed(); // This line is important to ensure the default behavior
+        // Your custom behavior, if any
+        Intent intent = new Intent(LostAnimalActivity.this, HomeActivity.class);
+        startActivity(intent);
+        finish();
+    }
 }
