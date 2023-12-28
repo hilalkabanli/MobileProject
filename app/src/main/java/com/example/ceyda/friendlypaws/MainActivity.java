@@ -73,10 +73,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        TextView txtView = findViewById(R.id.textView7);
-
-        fetchUserInformation(txtView);
-
         spType = findViewById(R.id.sp_type);
         btFind = findViewById(R.id.bt_find);
         supportMapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.google_map);
@@ -215,45 +211,5 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-    private void fetchUserInformation(final TextView txtView) {
-        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        if (firebaseUser != null) {
-            String userId = firebaseUser.getUid();
 
-            DatabaseReference userReference = FirebaseDatabase.getInstance().getReference("users").child(userId);
-
-            userReference.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    Log.d("FirebaseData", "onDataChange triggered");
-                    if (dataSnapshot.exists()) {
-                        Log.d("FirebaseData", "Data exists");
-                        //User data found
-                        Userr user = dataSnapshot.getValue(Userr.class);
-
-                        // Now 'user' contains the information you stored in the database
-                        email = user.getEmail();
-                        username = user.getUsername();
-
-                        //email = firebaseUser.getEmail();
-
-                        // Update the TextView with the retrieved email
-                        txtView.setText(email);
-
-                    } else {
-                        // User data not found in the database, handle accordingly
-                        Log.d("FirebaseData", "Data does not exist");
-                        Toast.makeText(MainActivity.this, "User data not found.", Toast.LENGTH_SHORT).show();
-                    }
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-                    // Handle errors here
-                    Toast.makeText(MainActivity.this, "Database error: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
-
-    }
 }

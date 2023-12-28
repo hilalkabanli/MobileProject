@@ -126,7 +126,7 @@ public class SignupActivity extends AppCompatActivity {
                                             }
                                         });
                             }
-                            Intent intent = new Intent(SignupActivity.this, MainActivity.class);
+                            Intent intent = new Intent(SignupActivity.this, HomeActivity.class);
                             startActivity(intent);
                             finish();
                             Toast.makeText(SignupActivity.this, "Successfull Registery", Toast.LENGTH_SHORT).show();
