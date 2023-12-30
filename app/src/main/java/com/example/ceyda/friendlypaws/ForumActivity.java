@@ -19,6 +19,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,8 +61,8 @@ public class ForumActivity extends AppCompatActivity implements ForumManager.Mes
             recyclerView.setAdapter(messageAdapter2);
         }
 
-
-        forumManager.listenForMessages(this);
+        forumManager.fetchAllMessages(this); // Firebase'den tüm mesajları çek
+        //forumManager.listenForMessages(this);
 
         sendButton.setOnClickListener(view -> {
             String message = messageEditText.getText().toString().trim();
@@ -79,4 +84,5 @@ public class ForumActivity extends AppCompatActivity implements ForumManager.Mes
 
 
     }
+
 }

@@ -8,6 +8,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class ForumManager {
 
@@ -60,6 +61,29 @@ public class ForumManager {
 
             }
 
+        });
+    }
+
+    public void fetchAllMessages(ForumManager.MessageListener listener) {
+        DatabaseReference messagesRef = FirebaseDatabase.getInstance().getReference("messages");
+
+        messagesRef.addValueEventListener(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    ForumMessage message = snapshot.getValue(ForumMessage.class);
+                    if (message != null) {
+                        listener.onMessageAdded(message); // Yeni mesajları eklemek için listener'ı kullan
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Hata durumunda yapılacaklar
+            }
         });
     }
 
