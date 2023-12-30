@@ -3,6 +3,7 @@ package com.example.ceyda.friendlypaws;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -39,6 +40,17 @@ public class MessageAdapter2 extends RecyclerView.Adapter<MessageAdapter2.Messag
     public void onBindViewHolder(@NonNull MessageViewHolder holder, int position) {
         ForumMessage message = messageList.get(position);
         holder.bind(message, loggedInUserId); // Mesaj ve oturum açmış kullanıcının ID'sini ViewHolder'a gönder
+
+        /*
+        // Mesaj görünümüne boşluk eklemek için LinearLayout.LayoutParams kullanılabilir
+        RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) holder.itemView.getLayoutParams();
+
+        // Örnek olarak, yukarı ve aşağıda 2dp'lik bir boşluk ekleyebiliriz
+        params.setMargins(0, 2, 0, 2);
+        holder.itemView.setLayoutParams(params);
+
+         */
+
     }
 
     @Override
