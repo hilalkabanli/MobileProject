@@ -11,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.ceyda.friendlypaws.model.Userr;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -22,6 +24,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
+import java.io.File;
+
 public class ProfileActivity extends AppCompatActivity {
 
     private TextView nickname_txt, email_txt, badge_txt, points_txt;
@@ -29,6 +33,7 @@ public class ProfileActivity extends AppCompatActivity {
     private Button editBtn, playBtn;
     private String username, email, badge;
     private int point;
+    private File profilePictureFile;  //= new File(getFilesDir(), "profile_picture.jpg");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +45,24 @@ public class ProfileActivity extends AppCompatActivity {
         badge_txt = findViewById(R.id.textView10);
         points_txt = findViewById(R.id.textView11);
 
+        // Initialize profilePictureFile in the onCreate method
+        profilePictureFile = new File(getFilesDir(), "profile_picture.jpg");
+
         profile_picture_img_view = findViewById(R.id.imageView3);
+
+        // Check if a profile picture has been selected
+        if (profilePictureFile != null && profilePictureFile.exists()) {
+            // Set the profile picture using Glide or any other image-loading library
+            //Glide.with(ProfileActivity.this).load(profilePictureFile).into(profile_picture_img_view);
+            Glide.with(ProfileActivity.this)
+                    .load(profilePictureFile)
+                    .skipMemoryCache(true)
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .into(profile_picture_img_view);
+        } else {
+            // If no profile picture has been selected, display a message or take appropriate action.
+            Toast.makeText(ProfileActivity.this, "None profile picture.", Toast.LENGTH_SHORT).show();
+        }
 
         editBtn = findViewById(R.id.button10);
         playBtn = findViewById(R.id.button9);
