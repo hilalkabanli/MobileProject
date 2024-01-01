@@ -39,17 +39,17 @@ tools:context=".HomeActivity">
         android:layout_width="140dp"
         android:layout_height="50dp"
         android:layout_marginEnd="25dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
+        android:text="Paw ChatBot"
         app:layout_constraintBottom_toTopOf="@+id/button8"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="Paw ChatBot" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/button5"
         android:layout_width="140dp"
         android:layout_height="50dp"
         android:layout_marginEnd="25dp"
-        android:layout_marginBottom="35dp"
+        android:layout_marginBottom="25dp"
         android:text="Map"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -59,7 +59,7 @@ tools:context=".HomeActivity">
         android:layout_width="140dp"
         android:layout_height="50dp"
         android:layout_marginEnd="25dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:text="Lost Animal"
         app:layout_constraintBottom_toTopOf="@+id/button5"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -75,5 +75,15 @@ tools:context=".HomeActivity">
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/r_ic_person" />
+
+    <Button
+        android:id="@+id/forumBtn"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="10dp"
+        android:text="Forum"
+        app:layout_constraintBottom_toTopOf="@+id/bt_chatbot"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 

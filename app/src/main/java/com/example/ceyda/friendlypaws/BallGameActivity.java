@@ -3,6 +3,7 @@ package com.example.ceyda.friendlypaws;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -380,5 +381,14 @@ public class BallGameActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed(); // This line is important to ensure the default behavior
+        // Your custom behavior, if any
+        Intent intent = new Intent(BallGameActivity.this, ProfileActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

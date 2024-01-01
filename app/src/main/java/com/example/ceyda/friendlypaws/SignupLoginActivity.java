@@ -13,7 +13,8 @@ public class SignupLoginActivity extends AppCompatActivity {
 
     private Button btnLogin;
     private Button btnSignup;
-    private Button jumpBtn;
+
+    //private Button jumpBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +26,7 @@ public class SignupLoginActivity extends AppCompatActivity {
 
         btnLogin = findViewById(R.id.button);
         btnSignup = findViewById(R.id.button2);
-        jumpBtn = findViewById(R.id.jumpBtn);
+        //jumpBtn = findViewById(R.id.jumpBtn);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +46,7 @@ public class SignupLoginActivity extends AppCompatActivity {
             }
         });
 
+        /*
         jumpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,6 +55,7 @@ public class SignupLoginActivity extends AppCompatActivity {
                 finish();
             }
         });
+        */
 
     }
 }

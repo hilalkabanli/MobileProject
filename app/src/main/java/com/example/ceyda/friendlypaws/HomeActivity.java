@@ -27,7 +27,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private String username;
     private String email;
-    private Button lostpetbtn, mainBtn;
+    private Button lostpetbtn, mainBtn, forumBtn;
     private ImageButton profilebtn;
 
 
@@ -55,6 +55,8 @@ public class HomeActivity extends AppCompatActivity {
 
         profilebtn = findViewById(R.id.imageButton);
 
+        forumBtn = findViewById(R.id.forumBtn);
+
         lostpetbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,6 +70,15 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
+                startActivity(intent);
+                //finish();
+            }
+        });
+
+        forumBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, ForumActivity.class);
                 startActivity(intent);
                 //finish();
             }
