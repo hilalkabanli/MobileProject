@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignupActivity">
+    tools:context=".SignupActivity"
+    android:background="@drawable/gradiant_background">
 
     <EditText
         android:id="@+id/editTextPersonName"
@@ -70,7 +71,7 @@
         android:layout_marginTop="65dp"
         android:layout_marginEnd="158dp"
         android:text="Welcome"
-        android:textColor="#50155A"
+        android:textColor="#32485E"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,7 +84,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="40dp"
         android:text="Sign up for the Friendly Paws."
-        android:textColor="#822691"
+        android:textColor="#32485E"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -96,6 +97,7 @@
         android:layout_marginTop="25dp"
         android:layout_marginEnd="131dp"
         android:text="Sign Up"
+        app:backgroundTint="#3F5A75"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword2" />

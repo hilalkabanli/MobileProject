@@ -1,20 +1,23 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:backgroundTint="#D5D6D6"
-android:foregroundTint="#D5D6D6"
-tools:context=".HomeActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#96A6B6"
+    app:backgroundTint="#96A6B6"
+
+    tools:context=".HomeActivity">
+
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="186dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:text="Home Page"
-        android:textColor="#782287"
+        android:layout_width="301dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Friendly Paws"
+        android:textAllCaps="false"
+        android:textColor="#FCDDC9"
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,7 +30,7 @@ tools:context=".HomeActivity">
         android:layout_marginEnd="20dp"
         android:text="  "
         android:textAlignment="textEnd"
-        android:textColor="#832693"
+        android:textColor="#FCDDC9"
         android:textSize="16sp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,54 +39,72 @@ tools:context=".HomeActivity">
 
     <Button
         android:id="@+id/bt_chatbot"
-        android:layout_width="140dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
         android:text="Paw ChatBot"
+        android:textColor="#1A3D59"
+        app:backgroundTint="#FCDDC9"
         app:layout_constraintBottom_toTopOf="@+id/button8"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/button5"
-        android:layout_width="140dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="25dp"
-        android:text="Map"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
         android:id="@+id/button8"
-        android:layout_width="140dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
         android:text="Lost Animal"
+        android:textColor="#1A3D59"
+        app:backgroundTint="#FCDDC9"
         app:layout_constraintBottom_toTopOf="@+id/button5"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <Button
+        android:id="@+id/forumBtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:text="Forum"
+        android:textColor="#1A3D59"
+        app:backgroundTint="#FCDDC9"
+        app:layout_constraintBottom_toTopOf="@+id/bt_chatbot"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="56dp"
+        android:text="Map"
+        android:textColor="#1A3D59"
+        app:backgroundTint="#FCDDC9"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="20dp"
         android:background="#A38DDC"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/r_ic_person" />
 
-    <Button
-        android:id="@+id/forumBtn"
-        android:layout_width="140dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="10dp"
-        android:text="Forum"
-        app:layout_constraintBottom_toTopOf="@+id/bt_chatbot"
-        app:layout_constraintEnd_toEndOf="parent" />
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="440dp"
+        android:layout_height="390dp"
+        app:srcCompat="@drawable/pawhand"
+        tools:layout_editor_absoluteX="-15dp"
+        tools:layout_editor_absoluteY="73dp"
+        app:layout_constraintBottom_toTopOf="@+id/forumBtn"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 

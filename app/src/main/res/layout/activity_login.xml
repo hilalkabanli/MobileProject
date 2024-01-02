@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    android:background="@drawable/gradiant_background">
 
     <TextView
         android:id="@+id/textView3"
@@ -14,7 +15,7 @@
         android:layout_marginTop="100dp"
         android:layout_marginEnd="124dp"
         android:text="Welcome back!"
-        android:textColor="#491A51"
+        android:textColor="#32485E"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +28,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="50dp"
         android:text="Log in to your account."
-        android:textColor="#7C218C"
+        android:textColor="#4A6988"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -64,6 +65,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="142dp"
         android:text="Log In"
+        app:backgroundTint="#5D7A97"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
