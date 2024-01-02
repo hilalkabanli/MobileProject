@@ -3,6 +3,7 @@ package com.example.ceyda.friendlypaws;
 public class ForumMessage {
     private String messageText;
     private String senderId;
+    private String senderEmail;
 
     public ForumMessage() {
     }
@@ -26,5 +27,13 @@ public class ForumMessage {
 
     public void setSenderId(String senderId) {
         this.senderId = senderId;
+    }
+
+    public String getSenderEmail() {
+        return senderEmail;
+    }
+
+    public void setSenderEmail(String senderEmail) {
+        this.senderEmail = senderEmail;
     }
 }
