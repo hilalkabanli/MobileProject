@@ -60,6 +60,7 @@ public class ForumActivity extends AppCompatActivity implements ForumManager.Mes
             messageAdapter2 = new MessageAdapter2(messageList, loggedInUserId);
             recyclerView.setAdapter(messageAdapter2);
         }
+        
 
         forumManager.fetchAllMessages(this); // Firebase'den tüm mesajları çek
         //forumManager.listenForMessages(this);
