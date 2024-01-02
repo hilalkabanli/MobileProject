@@ -1,5 +1,6 @@
 package com.example.ceyda.friendlypaws;
 
+import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -66,6 +67,8 @@ public class MessageAdapter2 extends RecyclerView.Adapter<MessageAdapter2.Messag
         TextView messageText;
         TextView senderEmailText;
 
+        String userID;
+        String userId;
         String email2, username;
 
         public MessageViewHolder(@NonNull View itemView) {
@@ -85,7 +88,7 @@ public class MessageAdapter2 extends RecyclerView.Adapter<MessageAdapter2.Messag
         private void fetchUserInformation(final TextView senderEmailText) {
             FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
             if (firebaseUser != null) {
-                String userId = firebaseUser.getUid();
+                userId = firebaseUser.getUid();
 
                 DatabaseReference userReference = FirebaseDatabase.getInstance().getReference("users").child(userId);
 
@@ -101,6 +104,10 @@ public class MessageAdapter2 extends RecyclerView.Adapter<MessageAdapter2.Messag
                             // Now 'user' contains the information you stored in the database
                             email2 = user.getEmail();
                             username = user.getUsername();
+
+                            String userId = firebaseUser.getUid();
+
+                            userID = userId;
 
                             // Update the TextView with the retrieved email
                             senderEmailText.setText(username);
