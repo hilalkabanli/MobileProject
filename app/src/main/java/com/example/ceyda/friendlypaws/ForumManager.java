@@ -3,6 +3,8 @@ package com.example.ceyda.friendlypaws;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -14,6 +16,7 @@ public class ForumManager {
 
     private DatabaseReference messagesRef;
 
+
     public ForumManager() {
         // Realtime Database referansı al
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -21,10 +24,10 @@ public class ForumManager {
     }
 
     // Mesajı gönder
-    public void sendMessage(String message, String senderId) {
+    public void sendMessage(String message, String senderMail) {
         // Yeni bir mesaj oluşturur ve Realtime Database'e ekler
         String messageId = messagesRef.push().getKey(); // Rastgele bir ID oluşturur
-        ForumMessage newMessage = new ForumMessage(message, senderId);
+        ForumMessage newMessage = new ForumMessage(message, senderMail);
         messagesRef.child(messageId).setValue(newMessage);
     }
 
@@ -90,5 +93,6 @@ public class ForumManager {
     public interface MessageListener {
         void onMessageAdded(ForumMessage message);
     }
-}
 
+
+}

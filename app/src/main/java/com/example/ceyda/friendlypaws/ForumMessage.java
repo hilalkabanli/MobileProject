@@ -2,15 +2,14 @@ package com.example.ceyda.friendlypaws;
 
 public class ForumMessage {
     private String messageText;
-    private String senderId;
-    private String senderEmail;
+    private String senderMail;
 
     public ForumMessage() {
     }
 
-    public ForumMessage(String messageText, String senderId) {
+    public ForumMessage(String messageText,String senderMail) {
         this.messageText = messageText;
-        this.senderId = senderId;
+        this.senderMail = senderMail;
     }
 
     public String getMessageText() {
@@ -21,19 +20,8 @@ public class ForumMessage {
         this.messageText = messageText;
     }
 
-    public String getSenderId() {
-        return senderId;
-    }
 
-    public void setSenderId(String senderId) {
-        this.senderId = senderId;
-    }
-
-    public String getSenderEmail() {
-        return senderEmail;
-    }
-
-    public void setSenderEmail(String senderEmail) {
-        this.senderEmail = senderEmail;
+    public String getSenderMail(){
+        return senderMail;
     }
 }

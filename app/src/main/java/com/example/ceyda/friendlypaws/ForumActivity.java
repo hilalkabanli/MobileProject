@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,11 +13,11 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.ceyda.friendlypaws.model.Userr;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -24,6 +25,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import org.checkerframework.checker.nullness.qual.NonNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +39,8 @@ public class ForumActivity extends AppCompatActivity implements ForumManager.Mes
     private ForumManager forumManager;
     private MessageAdapter2 messageAdapter2;
     private List<ForumMessage> messageList;
+
+    private String userID, email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,10 +59,16 @@ public class ForumActivity extends AppCompatActivity implements ForumManager.Mes
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
-            String loggedInUserId = user.getUid();
+            String userId = user.getUid();
+
+            userID = userId;
+
+            String userEmail = user.getEmail();
+
+            email = userEmail;
 
             // MessageAdapter2'yi oluştururken loggedInUserId kullan
-            messageAdapter2 = new MessageAdapter2(messageList, loggedInUserId);
+            messageAdapter2 = new MessageAdapter2(messageList, userID);
             recyclerView.setAdapter(messageAdapter2);
         }
         
@@ -68,7 +79,7 @@ public class ForumActivity extends AppCompatActivity implements ForumManager.Mes
         sendButton.setOnClickListener(view -> {
             String message = messageEditText.getText().toString().trim();
             if (!message.isEmpty()) {
-                forumManager.sendMessage(message, "user_id_here");
+                forumManager.sendMessage(message, email);
                 messageEditText.setText("");
             } else {
                 Toast.makeText(ForumActivity.this, "Please enter a message", Toast.LENGTH_SHORT).show();
@@ -85,5 +96,7 @@ public class ForumActivity extends AppCompatActivity implements ForumManager.Mes
 
 
     }
+
+
 
 }
